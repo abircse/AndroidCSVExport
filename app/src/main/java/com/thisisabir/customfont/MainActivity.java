@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             // export the file into device
             Context context = getApplicationContext();
             File filelocation = new File(getFilesDir(),"data.csv");
+            // use below line for store file into phone storage just comment below all line code
             Uri path = FileProvider.getUriForFile(context,"com.thisisabir.customfont.fileprovider", filelocation);
             Intent fileintent = new Intent(Intent.ACTION_SEND);
             fileintent.setType("text/csv");
